@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import io
 import time
+
 class Program():
     # init self list here
     def __init__(self):
@@ -35,6 +36,7 @@ class Program():
                 print(self.marka)
             except:
                 pass
+        #Save to files
         with io.open('marka.txt','w+',encoding='utf-8') as file:
             for i in self.marka:
                 file.write(str(i) + '\n')
