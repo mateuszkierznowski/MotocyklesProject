@@ -1,6 +1,5 @@
 # MotocyklesProject
 
-Hello!
 The clue of this project is to download a motorcycle Data from website and do the Regression with it.
 
 In Scraping.py I downloaded a Data of 14k motorcycles using bs4
