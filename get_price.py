@@ -1,6 +1,5 @@
 import joblib
 import numpy as np
-
 def get_price_of_mbike(enc_path, model_path):
     # Program need low letters because onehotencoder categories also are lower letters.
     brand = str(input("Select brand?: ")).lower()
@@ -11,7 +10,7 @@ def get_price_of_mbike(enc_path, model_path):
 
     model = joblib.load(model_path)
     enc = joblib.load(enc_path)
-    # len(enc.categories_) is equal to 2, thats why I use list comprehension
+    # len(enc.categories_) is equal to 2, that's why I use list comprehension
     # to extreact data from list
     enc_cat_lst = [enc for model in enc.categories_ for enc in model]
     while True:
