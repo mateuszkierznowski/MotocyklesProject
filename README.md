@@ -4,10 +4,10 @@ The clue of this project was to download a instances of 14.000 motorcycles from 
 
 ## Decription.
 
-In scrapper I have created a tool with download a Data from website
-CSV contain cleaned csv file of motorcycles data
-encoder contains a One Hot Encoder uses to properly encode input data
-models contains models (NN, XGBoost, GradientBoost)
+In scrapper I have created a tool with download a Data from website  
+CSV contain cleaned csv file of motorcycles data  
+encoder contains a One Hot Encoder uses to properly encode input data  
+models contains models (NN, XGBoost, GradientBoost)  
 
 ## How to use.
 
