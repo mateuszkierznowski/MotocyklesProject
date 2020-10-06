@@ -13,7 +13,7 @@ from tensorflow.keras.models import Sequential
 
 ohe = OneHotEncoder()
 model = GradientBoostingRegressor()
-df = pd.read_csv('motocykle_clean.csv', index_col=[0])
+df = pd.read_csv(r'CSV/motocykle_clean.csv', index_col=[0])
 df = df.reset_index(drop=True)
 categorical_cols = ['marka', 'model']
 df['marka'] = df['marka'].str.lower()
@@ -82,5 +82,5 @@ NN_model.fit(
     epochs=20,
     validation_data=(x_test, y_test)
 )
-joblib.dump(ohe,  'encoder_1_cat.joblib')
+#joblib.dump(ohe,  'encoder/encoder_1_cat.joblib')
 NN_model.save(r'models/NN_model.h5')
