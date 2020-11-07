@@ -16,5 +16,5 @@ You just need to run get_price.py and pass the features of motorcycle:
 
 ## Conclusion.
 
-Unfortunatelly the data set is to small to make a properly working model.
-I ll try to increase the size of data set in the future in order to crate best engine.
+The XGBoost score is over 0.9 so it is good. Next iterations of model may have more data and better parameter tuning.
+The task is to create web app and deploy it on heroku.
