@@ -16,5 +16,5 @@ You just need to run get_price.py and pass the features of motorcycle:
 
 ## Conclusion.
 
-The XGBoost score is over 0.9 so it is good. Next iterations of model may have more data and better parameter tuning.
-The task is to create web app and deploy it on heroku.
+The XGBoost score is over 0.9 (0.9 R^2) at this step it's acceptable. Next iterations of model may have more data and better parameter tuning.
+Overwall the task is to create web app and deploy it on heroku using XGBoost model.
