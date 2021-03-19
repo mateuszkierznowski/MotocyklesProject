@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import io
 import time
+import pandas as pd
 
 
 class Program():
@@ -15,6 +16,7 @@ class Program():
         self.power = []
         self.type = []
         self.price = []
+        self.df = pd.DataFrame(columns=['marka', 'model', 'year', 'course', 'capacity', 'price'])
 
     # main function of program
     def main(self):
@@ -27,44 +29,15 @@ class Program():
                 for i in z:
                     data = self.collect_data(i)
                     print(data)
-                    self.marka.append(data[0])
-                    self.model.append(data[1])
-                    self.year.append(data[2])
-                    self.course.append(data[3])
-                    self.capacity.append(data[4])
-                    self.power.append(data[5])
-                    self.type.append(data[6])
-                    self.price.append(data[7])
+                    self.df = self.df.append({'marka': data[0], 'model': data[1], 'year': data[2], 'course': data[3], 'capacity': data[4], 'price': data[5]}, ignore_index=True)
                 print(self.marka)
+
+                print(self.df)
             except:
                 pass
         # Save to files
-        with io.open('marka.txt', 'w+', encoding='utf-8') as file:
-            for i in self.marka:
-                file.write(str(i) + '\n')
-        with io.open('model.txt', 'w+', encoding='utf-8') as file:
-            for i in self.model:
-                file.write(str(i) + '\n')
-        with io.open('year.txt', 'w+', encoding='utf-8') as file:
-            for i in self.year:
-                file.write(str(i) + '\n')
-        with io.open('course.txt', 'w+', encoding='utf-8') as file:
-            for i in self.course:
-                file.write(str(i) + '\n')
-        with io.open('capacity.txt', 'w+', encoding='utf-8') as file:
-            for i in self.capacity:
-                file.write(str(i) + '\n')
-        with io.open('power.txt', 'w+', encoding='utf-8') as file:
-            for i in self.power:
-                file.write(str(i) + '\n')
-        with io.open('type.txt', 'w+', encoding='utf-8') as file:
-            for i in self.marka:
-                file.write(str(i) + '\n')
-        with io.open('price.txt', 'w+', encoding='utf-8') as file:
-            for i in self.price:
-                file.write(str(i) + '\n')
+        self.df.to_csv('csv/proba.csv')
 
-    # From one page collect all notice as links
     def collect_links(self, link):
         try:
             self.list = []
@@ -122,5 +95,7 @@ class Program():
             return self.finall
 
 
+
 prog = Program()
 prog.main()
+
